@@ -5,7 +5,7 @@ defmodule TalibEx.Nif do
   @on_load :load_nifs
 
   def load_nifs do
-    :talib_ex_nif
+    :talib_ex
     |> :code.priv_dir()
     |> Path.join("talib")
     |> :erlang.load_nif(0)

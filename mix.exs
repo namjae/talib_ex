@@ -3,7 +3,7 @@ defmodule TalibEx.MixProject do
 
   def project do
     [
-      app: :talib_ex_nif,
+      app: :talib_ex,
       version: "0.1.0",
       elixir: "~> 1.13",
       compilers: [:elixir_make | Mix.compilers()],
@@ -22,7 +22,7 @@ defmodule TalibEx.MixProject do
   defp package do
     # Docs
     [
-      name: "talib_ex_nif",
+      name: "talib_ex",
       source_url: "https://github.com/MortadaAK/talib_ex",
       homepage_url: "https://github.com/MortadaAK/talib_ex",
       links: %{
