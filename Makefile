@@ -21,7 +21,7 @@ ifneq ($(OS),Windows_NT)
 		CFLAGS  += -I/usr/include/ta-lib
 		LDFLAGS += -L/usr/lib
 		LDFLAGS += -L$(ERL_INTERFACE_PATH)
-		LDFLAGS += -lerl_interface 
+		# LDFLAGS += -lerl_interface 
 	endif
 
 	LDFLAGS += -shared 
