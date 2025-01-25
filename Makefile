@@ -6,22 +6,21 @@ FILES =  $(shell ls c_src/*.c)
 CFLAGS += -I$(ERLANG_PATH)
 CFLAGS += -Wno-unused-parameter
 CC= gcc
-LDFLAGS += -lta_lib
+LDFLAGS += -lta-lib
 
 ifneq ($(OS),Windows_NT)
 	CFLAGS += -fPIC
 
 	ifeq ($(shell uname),Darwin)
 		LDFLAGS += -dynamiclib -undefined dynamic_lookup
-		CFLAGS  += -I/opt/homebrew/Cellar/ta-lib/0.4.0/include/ta-lib/
-		LDFLAGS += -L/opt/homebrew/Cellar/ta-lib/0.4.0/lib/
+		CFLAGS  += -I/opt/homebrew/Cellar/ta-lib/0.6.4/include/ta-lib/
+		LDFLAGS += -L/opt/homebrew/Cellar/ta-lib/0.6.4/lib/
 	endif
 
 	ifeq ($(shell uname),Linux)
 		CFLAGS  += -I/usr/include/ta-lib
 		LDFLAGS += -L/usr/lib
 		LDFLAGS += -L$(ERL_INTERFACE_PATH)
-		# LDFLAGS += -lerl_interface 
 	endif
 
 	LDFLAGS += -shared 
