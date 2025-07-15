@@ -13,8 +13,8 @@ ifneq ($(OS),Windows_NT)
 
 	ifeq ($(shell uname),Darwin)
 		LDFLAGS += -dynamiclib -undefined dynamic_lookup
-		CFLAGS  += -I/opt/homebrew/Cellar/ta-lib/0.6.4/include/ta-lib/
-		LDFLAGS += -L/opt/homebrew/Cellar/ta-lib/0.6.4/lib/
+		CFLAGS  += -I/usr/local/include/ta-lib/
+		LDFLAGS += -L/usr/local/lib/
 	endif
 
 	ifeq ($(shell uname),Linux)
