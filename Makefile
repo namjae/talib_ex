@@ -13,14 +13,15 @@ ifneq ($(OS),Windows_NT)
 
 	ifeq ($(shell uname),Darwin)
 		LDFLAGS += -dynamiclib -undefined dynamic_lookup
-		CFLAGS  += -I/usr/local/include/ta-lib/
-		LDFLAGS += -L/usr/local/lib/
+		CFLAGS  += -I/opt/homebrew/Cellar/ta-lib/0.8.3/include/ta-lib/
+		LDFLAGS += -L/opt/homebrew/Cellar/ta-lib/0.8.3/lib/
 	endif
 
 	ifeq ($(shell uname),Linux)
 		CFLAGS  += -I/usr/include/ta-lib
 		LDFLAGS += -L/usr/lib
 		LDFLAGS += -L$(ERL_INTERFACE_PATH)
+		LDFLAGS += -lerl_interface 
 	endif
 
 	LDFLAGS += -shared 
